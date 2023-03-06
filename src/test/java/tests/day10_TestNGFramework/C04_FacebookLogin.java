@@ -7,6 +7,7 @@ import pages.FacebookPage;
 import utilities.Driver;
 import utilities.ReusableMethods;
 
+
 public class C04_FacebookLogin {
 
     @Test
@@ -32,6 +33,8 @@ public class C04_FacebookLogin {
         Assert.assertTrue(facebookPage.girisYapilamadiYaziElementi.isDisplayed());
 
         ReusableMethods.bekle(3);
+
+
 
         Driver.closeDriver();
     }

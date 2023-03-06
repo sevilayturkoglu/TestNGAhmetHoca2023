@@ -26,7 +26,7 @@ public class AmazonPage {/*
  @FindBy(xpath = "//h1[@class='a-size-base s-desktop-toolbar a-text-normal']")
  public WebElement aramaSonucElementi;
 
- @FindBy(xpath = "(//img[@class='s-image'])[1]")
+ @FindBy(xpath = "(//span[@class='a-size-base-plus a-color-base a-text-normal'])[1]")
  public WebElement ilkUrun;
 
  @FindBy(xpath = "//span[@id='productTitle']")

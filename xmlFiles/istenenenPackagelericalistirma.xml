@@ -1,0 +1,12 @@
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd" >
+<suite name="Istenen packageleri calistirma">
+    <test name="day11 Test">
+        <packages>
+
+            <package name="tests.day11_POM_assertion"></package>
+            <package name="tests.day12_xmlFiles"></package>
+
+        </packages>
+    </test>
+
+</suite>

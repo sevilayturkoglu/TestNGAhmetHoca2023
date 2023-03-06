@@ -6,9 +6,10 @@ import org.openqa.selenium.support.PageFactory;
 import utilities.Driver;
 
 public class FacebookPage {
-    public FacebookPage(){
-        PageFactory.initElements(Driver.getDriver(),this);
+    public FacebookPage() {
+        PageFactory.initElements(Driver.getDriver(), this);
     }
+
     @FindBy(xpath = "//button[@title='Only allow essential cookies']")
     public WebElement cookiesKabulBtn;
     @FindBy(xpath = "//input[@placeholder='Email address or phone number']")
@@ -21,5 +22,9 @@ public class FacebookPage {
     public WebElement loginButton;
     @FindBy(xpath = "//div[@class='_9ay7']")
     public WebElement girisYapilamadiYaziElementi;
+
+         public static void getter(){
+                System.out.println("Deneme");
+ }
 
 }

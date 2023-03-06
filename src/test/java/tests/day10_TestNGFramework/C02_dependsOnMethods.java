@@ -5,6 +5,7 @@ import org.testng.Assert;
 import org.testng.annotations.Test;
 import pages.AmazonPage;
 import utilities.Driver;
+import utilities.ReusableMethods;
 
 public class C02_dependsOnMethods  {
      /*
@@ -37,10 +38,9 @@ public class C02_dependsOnMethods  {
 
         Assert.assertTrue(actualurl.contains(expectedIcerik));
     }
-
-    @Test(dependsOnMethods = "amazonTesti")
+    @Test //(dependsOnMethods = "amazonTesti")
     public void nutellaTesti(){
-
+        amazonPage = new AmazonPage();
 
         amazonPage.aramaKutusu.sendKeys("Nutella" + Keys.ENTER);
 
@@ -51,8 +51,10 @@ public class C02_dependsOnMethods  {
 
     }
 
-    @Test(dependsOnMethods = "nutellaTesti")
-    public void ilkUrunTesti() {
+    @Test
+    public void zilkUrunTesti() {
+        amazonPage = new AmazonPage();
+
         amazonPage.ilkUrun.click();
 
         String expectedIcerik = "Nutella";
@@ -60,6 +62,6 @@ public class C02_dependsOnMethods  {
 
         Assert.assertTrue(actualUrunIsmi.contains(expectedIcerik));
 
-        Driver.closeDriver();
+       // Driver.closeDriver();
     }
     }

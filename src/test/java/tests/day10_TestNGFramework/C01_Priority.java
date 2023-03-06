@@ -14,7 +14,7 @@ public class C01_Priority {
         priority degeri yazilmazsa default olarak priority=0 kabul edilir
      */
 
-    @Test (priority = -20)
+    @Test (priority = 45)
     public void youtubeTesti(){
         // youtube ana sayfaya gidip, youtube gittigimizi test edelim
         Driver.getDriver().get("https://www.youtube.com");
@@ -27,7 +27,7 @@ public class C01_Priority {
         Driver.closeDriver();
     }
 
-    @Test
+    @Test(priority = 20)
     public void amazonTesti(){
         // Amazon ana sayfaya gidip, amazona gittigimizi test edelim
         Driver.getDriver().get("https://www.amazon.com");
@@ -40,7 +40,7 @@ public class C01_Priority {
         Driver.closeDriver();
     }
 
-    @Test
+    @Test(priority = 10)
     public void wiseTesti() throws InterruptedException {
         // wisequarter ana sayfaya gidip, wisequarter'a gittigimizi test edelim
         Driver.getDriver().get("https://www.wisequarter.com");

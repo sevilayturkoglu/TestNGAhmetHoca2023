@@ -54,7 +54,7 @@ public class C03_BeforeAfterNotasyonlari {
     public void afterTest(){
         System.out.println("After Test");
     }
-    @AfterClass
+    @AfterClass (groups = "smoke")
     public void afterClass(){
         System.out.println("After Class");
     }
