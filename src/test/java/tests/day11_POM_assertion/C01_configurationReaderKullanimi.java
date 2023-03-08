@@ -13,8 +13,8 @@ public class C01_configurationReaderKullanimi {
         Driver.getDriver().get(ConfigReader.getProperty("amazonUrl"));
         AmazonPage amazonPage=new AmazonPage();
         amazonPage.aramaKutusu.sendKeys(ConfigReader.getProperty("amazonAranacakKelime")+ Keys.ENTER);
-String expectedIceric=ConfigReader.getProperty("amazonAranacakKelime");
-String actualAramaSonuzYazisi=amazonPage.aramaSonucElementi.getText();
+            String expectedIceric=ConfigReader.getProperty("amazonAranacakKelime");
+            String actualAramaSonuzYazisi=amazonPage.aramaSonucElementi.getText();
         Assert.assertTrue(actualAramaSonuzYazisi.contains(expectedIceric));
 
     }

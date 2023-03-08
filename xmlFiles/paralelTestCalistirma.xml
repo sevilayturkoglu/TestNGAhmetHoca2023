@@ -1,0 +1,17 @@
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd" >
+<suite name="Claslari paralel calistirma" parallel="methods" thread-count="2" verbose="3" >
+    <test name="paralel calisma 1">
+        <classes>
+            <class name="tests.day11_POM_assertion.C02_PozitifLoginTesti"></class>
+            <class name="tests.day10_TestNGFramework.C01_Priority"></class>
+
+        </classes>
+    </test>
+
+    <test name="Paralel calisma 2">
+        <classes>
+            <class name="tests.day12_xmlFiles.C02_ReusableMethodsSwitchingwindows"></class>
+            <class name="tests.day11_POM_assertion.C05_SoftAssert"></class>
+        </classes>
+    </test>
+</suite>

@@ -55,7 +55,6 @@ public class DeneZero {
         }
 
    softAssert.assertEquals(selectActualList,expectedListe);
-
         //"Select One", "Australia (dollar)", "Canada (dollar)","Switzerland (franc)","China (yuan)",
         // "Denmark (krone)","Eurozone (euro)","Great Britain (pound)","Hong Kong (dollar)",
         // "Japan (yen)","Mexico (peso)","Norway (krone)","New Zealand (dollar)","Sweden (krona)",

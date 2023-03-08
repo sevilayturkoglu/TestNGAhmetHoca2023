@@ -9,7 +9,7 @@ import utilities.Driver;
 
 public class C05_SoftAssert {
 
-        @Test(groups = {"mr1","mr2"})
+        @Test(groups = "smoke")
         public void amazonTesti(){
         /*
             Genel olarak
