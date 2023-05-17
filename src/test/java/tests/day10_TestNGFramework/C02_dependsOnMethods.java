@@ -1,6 +1,9 @@
 package tests.day10_TestNGFramework;
 
+import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.Keys;
+import org.openqa.selenium.interactions.Actions;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 import pages.AmazonPage;
@@ -64,4 +67,12 @@ public class C02_dependsOnMethods  {
 
        // Driver.closeDriver();
     }
-    }
+
+    @Test
+    public void amazonTesti1(){
+        Driver.getDriver().get("https://www.facebook.com/login");
+        Actions actions=new Actions(Driver.getDriver());
+        ((JavascriptExecutor) Driver.getDriver()).executeScript("window.scrollTo(0, document.body.scrollHeight)");
+        Driver.getDriver().findElement(By.xpath("//i[@class='fa fa-facebook']")).click();
+
+    }}

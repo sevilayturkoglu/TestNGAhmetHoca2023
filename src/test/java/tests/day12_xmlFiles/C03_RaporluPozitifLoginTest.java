@@ -18,11 +18,11 @@ public class C03_RaporluPozitifLoginTest extends TestBaseRapor {
 
         Driver.getDriver().get(ConfigReader.getProperty("qdUrl"));
         extentTest.info("qualitydemy ana sayfaya gidildi");
-        // login linkine tiklayin
+
         QdPage qdPage = new QdPage();
         qdPage.ilkLoginLinki.click();
        extentTest.info("ilk login linkine gidildi");
-        // gecerli kullanici adi ve password ile giris yapin
+
         qdPage.emailKutusu.sendKeys(ConfigReader.getProperty("qdGecerliUsername"));
         extentTest.info("gecerli email yazildi");
         qdPage.passwordKutusu.sendKeys(ConfigReader.getProperty("qdGecerliPassword"));
@@ -31,7 +31,7 @@ public class C03_RaporluPozitifLoginTest extends TestBaseRapor {
         ReusableMethods.bekle(1);
         qdPage.loginButonu.click();
        extentTest.info("login butonu click yapildi");
-        // basarili bir sekilde giris yapildigini test edin
+
         Assert.assertTrue(qdPage.basariliGirisElementi.isDisplayed());
      extentTest.pass("Basarili sekilde giris yapildigi test edildi");
     }

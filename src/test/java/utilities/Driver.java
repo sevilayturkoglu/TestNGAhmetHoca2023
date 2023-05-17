@@ -33,6 +33,7 @@ public class Driver {
 
            switch(browserType){
                 case "chrome":
+                    System.setProperty("webdriver.http.factory", "jdk-http-client");
                     WebDriverManager.chromedriver().setup();
                     driverPool.set(new ChromeDriver());
                     driverPool.get().manage().window().maximize();
