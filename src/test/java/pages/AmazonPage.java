@@ -5,7 +5,7 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import utilities.Driver;
 
-public class AmazonPage {/*
+public class AmazonPage extends BasePage {/*
         Pages class'lari surekli kullandigimiz locate'leri
         tekrar tekrar locate etmek zorunda kalmaktan kurtulmak icin kullanilir
         Her pages class'i Driver class'inda olusturulan driver'i kullanir
@@ -15,10 +15,10 @@ public class AmazonPage {/*
         basina parametresiz bir constructor olusturup
         icerisinde driver'i bu class'a tanitiyoruz.
      */
-
+/*
  public AmazonPage(){
   PageFactory.initElements(Driver.getDriver(),this);
- }
+ }*/
 
  @FindBy(id="twotabsearchtextbox")
  public WebElement aramaKutusu;

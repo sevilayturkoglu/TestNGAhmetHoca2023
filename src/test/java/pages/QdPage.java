@@ -5,11 +5,11 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import utilities.Driver;
 
-public class QdPage {
-    public QdPage() {
+public class QdPage extends BasePage{
+    /*public QdPage() {
         PageFactory.initElements(Driver.getDriver(), this);
 
-    }
+    }*/
     @FindBy(linkText = "Log in")
     public WebElement ilkLoginLinki;
 

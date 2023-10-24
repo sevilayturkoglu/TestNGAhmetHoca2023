@@ -5,11 +5,6 @@ import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebElement;
 import org.testng.Assert;
 import org.testng.annotations.Test;
-import pages.AmazonPage;
-import pages.AmazonPageCross;
-import utilities.ConfigReader;
-import utilities.Driver;
-import utilities.DriverCross;
 import utilities.TestBaseCross;
 
 public class C02_AmazonTestCross extends TestBaseCross {

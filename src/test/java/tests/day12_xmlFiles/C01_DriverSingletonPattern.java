@@ -1,7 +1,6 @@
 package tests.day12_xmlFiles;
 
 import org.testng.annotations.Test;
-import utilities.Driver;
 
 public class C01_DriverSingletonPattern {
     @Test

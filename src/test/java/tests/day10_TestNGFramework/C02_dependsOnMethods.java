@@ -37,11 +37,11 @@ public class C02_dependsOnMethods  {
         Driver.getDriver().get("https://www.amazon.com");
 
         String expectedIcerik="amazon";
-        String actualurl=Driver.getDriver().getCurrentUrl();
+        String actualurl= Driver.getDriver().getCurrentUrl();
 
         Assert.assertTrue(actualurl.contains(expectedIcerik));
     }
-    @Test //(dependsOnMethods = "amazonTesti")
+    @Test (dependsOnMethods = "amazonTesti")
     public void nutellaTesti(){
         amazonPage = new AmazonPage();
 
@@ -54,10 +54,10 @@ public class C02_dependsOnMethods  {
 
     }
 
-    @Test
+    @Test(dependsOnMethods = "nutellaTesti")
     public void zilkUrunTesti() {
         amazonPage = new AmazonPage();
-
+        ReusableMethods.bekle(1);
         amazonPage.ilkUrun.click();
 
         String expectedIcerik = "Nutella";
@@ -67,7 +67,7 @@ public class C02_dependsOnMethods  {
 
        // Driver.closeDriver();
     }
-
+/*
     @Test
     public void amazonTesti1(){
         Driver.getDriver().get("https://www.facebook.com/login");
@@ -75,4 +75,5 @@ public class C02_dependsOnMethods  {
         ((JavascriptExecutor) Driver.getDriver()).executeScript("window.scrollTo(0, document.body.scrollHeight)");
         Driver.getDriver().findElement(By.xpath("//i[@class='fa fa-facebook']")).click();
 
-    }}
+    }*/
+}

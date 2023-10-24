@@ -5,10 +5,10 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import utilities.Driver;
 
-public class AmazonPageCross {
-    public AmazonPageCross(){
+public class AmazonPageCross extends BasePage {
+    /*public AmazonPageCross(){
         PageFactory.initElements(Driver.getDriver(),this);
-    }
+    }*/
 
     @FindBy(id="twotabsearchtextbox")
     public WebElement aramaKutusu;

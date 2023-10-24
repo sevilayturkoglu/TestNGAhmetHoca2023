@@ -6,6 +6,7 @@ import org.openqa.selenium.support.ui.Select;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
 import org.testng.asserts.SoftAssert;
+import pages.BasePage;
 import utilities.ConfigReader;
 import utilities.Driver;
 
@@ -13,7 +14,7 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 
-public class Q3 {
+public class Q3 extends BasePage {
     /*
      * Navigate to https://www.saucedemo.com/
      * Enter the username as standard_user
@@ -22,21 +23,21 @@ public class Q3 {
      *    Test1 : Choose price low to high
      *    Test2 : Verify item prices are sorted from low to high with soft Assert
     */
-    @BeforeTest
-    public void login(){
+   /* @BeforeTest
+    public void login(){//Bu methodu BasePage e tasidigimiz icin artik burada ihtiyacimiz yok
         Driver.getDriver().get(ConfigReader.getProperty("sauceDemo"));
         Driver.getDriver().findElement(By.id("user-name")).sendKeys("standard_user");
         Driver.getDriver().findElement(By.id("password")).sendKeys("secret_sauce");
         Driver.getDriver().findElement(By.id("login-button")).click();
-    }
+    }*/
     SoftAssert softAssert=new SoftAssert();
     @Test
     public void saucedemoTest1(){
 
-        WebElement selectWebElement=Driver.getDriver().findElement(By.xpath("//select[@class='product_sort_container']"));
+        WebElement selectWebElement= Driver.getDriver().findElement(By.xpath("//select[@class='product_sort_container']"));
         Select select=new Select(selectWebElement);
         select.selectByVisibleText("Price (low to high)");
-        selectWebElement=Driver.getDriver().findElement(By.xpath("//select[@class='product_sort_container']"));
+        selectWebElement= Driver.getDriver().findElement(By.xpath("//select[@class='product_sort_container']"));
         select=new Select(selectWebElement);
         softAssert.assertTrue(select.getFirstSelectedOption().getText().equals("Price (low to high)"));
 

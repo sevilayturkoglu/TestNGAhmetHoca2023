@@ -4,6 +4,7 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.Select;
 import org.testng.annotations.Test;
 import org.testng.asserts.SoftAssert;
+import pages.BasePage;
 import pages.ZeroPage;
 import utilities.ConfigReader;
 import utilities.Driver;
@@ -13,13 +14,14 @@ import utilities.ReusableMethods;
 import java.util.ArrayList;
 import java.util.List;
 
-public class C06_ZeroTest {
+public class C06_ZeroTest  {
     @Test(groups = "smoke")
     public void webappTesti(){
 
         ZeroPage zeroPage=new ZeroPage();
         //1. “http://zero.webappsecurity.com/” Adresine gidin
-        Driver.getDriver().get(ConfigReader.getProperty("zeroUrl"));
+        //Driver.getDriver().get(ConfigReader.getProperty("zeroUrl"));
+        Driver.getDriver().get("http://www.zero.webappsecurity.com/");
         // 2. Sign in butonuna basin
         zeroPage.signInButonu.click();
         // 3. Login kutusuna “username” yazin

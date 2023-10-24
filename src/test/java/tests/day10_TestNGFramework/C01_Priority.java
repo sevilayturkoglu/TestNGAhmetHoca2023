@@ -17,8 +17,8 @@ public class C01_Priority {
     @Test (priority = 45)
     public void youtubeTesti(){
         // youtube ana sayfaya gidip, youtube gittigimizi test edelim
-        Driver.getDriver().get("https://www.youtube.com");
-
+       // Driver.getDriver().get("https://www.youtube.com");
+     Driver.getDriver().get("https://www.youtube.com");
         // url youtube iceriyor mu test edelim
         String expectedIcerik = "youtube";
         String actualUrl= Driver.getDriver().getCurrentUrl();

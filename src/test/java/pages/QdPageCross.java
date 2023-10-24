@@ -5,11 +5,11 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import utilities.Driver;
 
-public class QdPageCross {
-    public QdPageCross() {
+public class QdPageCross extends BasePage {
+   /* public QdPageCross() {
         PageFactory.initElements(Driver.getDriver(), this);
 
-    }
+    }*/
     @FindBy(linkText = "Log in")
     public WebElement ilkLoginLinki;
 

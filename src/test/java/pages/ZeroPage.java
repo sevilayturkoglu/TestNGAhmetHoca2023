@@ -5,10 +5,10 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import utilities.Driver;
 
-public class ZeroPage {
-    public ZeroPage() {
+public class ZeroPage extends BasePage{
+   /* public ZeroPage() {
         PageFactory.initElements(Driver.getDriver(), this);
-    }
+    }*/
 
     @FindBy(id = "signin_button")
     public WebElement signInButonu;

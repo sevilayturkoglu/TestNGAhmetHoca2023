@@ -1,7 +1,6 @@
 package NevzatHocaPracticeDersleri.QualityPage.tests2;
 
 import NevzatHocaPracticeDersleri.QualityPage.pages2.QualityPage;
-import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;

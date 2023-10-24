@@ -1,15 +1,13 @@
 package utilities;
 
-import io.github.bonigarcia.wdm.WebDriverManager;
+
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
-import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.edge.EdgeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.safari.SafariDriver;
 
 import java.time.Duration;
-import java.util.concurrent.TimeUnit;
 
 public class Driver {
      /* Daha fazla kontrol imkani ve extends kullanmadan driver'a ulasmak icin
@@ -21,100 +19,73 @@ public class Driver {
      */
 
     private Driver(){}
-
-    private static InheritableThreadLocal<WebDriver> driverPool = new InheritableThreadLocal<>();
-
-   public static WebDriver getDriver(){
-
-        if(driverPool.get() == null){  // if driver/browser was never opened
-
-            String browserType = ConfigReader.getProperty("browser");
-
-
-           switch(browserType){
-                case "chrome":
-                    System.setProperty("webdriver.http.factory", "jdk-http-client");
-                    WebDriverManager.chromedriver().setup();
-                    driverPool.set(new ChromeDriver());
-                    driverPool.get().manage().window().maximize();
-                    driverPool.get().manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
-                    break;
-                case "firefox":
-                    WebDriverManager.firefoxdriver().setup();
-                    driverPool.set(new FirefoxDriver());
-                    driverPool.get().manage().window().maximize();
-                    driverPool.get().manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
-                    break;
-                case "headless-chrome":
-                    WebDriverManager.chromedriver().setup();
-                    ChromeOptions option = new ChromeOptions();
-                    option.setHeadless(true);
-                    driverPool.set(new ChromeDriver(option));
-                    driverPool.get().manage().window().maximize();
-                    driverPool.get().manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
-                    break;
-            }
-        }
-
-
-        return driverPool.get();
-
-    }
-    public static void closeDriver(){
-        if(driverPool.get() !=null) {
-            driverPool.get().quit(); // this line will kill the session. value will noy be null
-            driverPool.remove();
-        }
-    }
-}
-
-
-
-/*
-
     public static WebDriver driver;
 
     public static WebDriver getDriver() {
-        String istenenbrowser = ConfigReader.getProperty("browser");
+
+        String istenenBrowser = ConfigReader.getProperty("browser");
+
         if (driver == null) {
-            switch (istenenbrowser) {
-                case "chrome":
-                    WebDriverManager.chromedriver().setup();
-                    driver = new ChromeDriver();
 
-                    break;
+            switch (istenenBrowser) {
+
                 case "firefox":
-                    WebDriverManager.firefoxdriver().setup();
+
                     driver = new FirefoxDriver();
-
-                    break;
-                case "safari":
-                    WebDriverManager.safaridriver().setup();
-                    driver = new SafariDriver();
-
                     break;
                 case "edge":
-                    WebDriverManager.edgedriver().setup();
+
                     driver = new EdgeDriver();
+                    break;
+                case "safari":
+
+                    driver = new SafariDriver();
+                    break;
+                default:
+                    driver=new ChromeDriver();
+                  /*  ChromeOptions options = new ChromeOptions();
+                    options.addArguments("--remote-allow-origins=*");
+                    driver = new ChromeDriver(options);*/
+                    break;
+
+                    /*
+                    //Driver chrome da hata verirse bu option denenebilir
+                     driver = new ChromeDriver();
+                    driver.manage().window().maximize();
+                    driver.manage().timeouts().implicitlyWait(15, TimeUnit.SECONDS);
+                    ChromeOptions chromeOptions = new ChromeOptions();
+                    chromeOptions.setPageLoadStrategy(PageLoadStrategy.EAGER);
+
+                    chromeOptions.setPageLoadTimeout(Duration.ofSeconds(14));
+                    break;
+                     */
+
             }
+            driver.manage().window().maximize();
+            driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(15));
+
         }
-        driver.manage().window().maximize();
-        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(15));
+
 
         return driver;
+
     }
 
     public static void closeDriver() {
+
         if (driver != null) {
             driver.close();
             driver = null;
         }
+
+
     }
 
-    public static void quitDriver() {
+    public static void quiteDriver() {
+
         if (driver != null) {
             driver.quit();
             driver = null;
         }
     }
-}*/
+}
