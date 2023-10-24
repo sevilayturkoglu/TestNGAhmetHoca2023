@@ -39,8 +39,8 @@ public class DeneTest {
         }
 
           //Driver.getDriver().findElement(By.xpath("//input[@class='gLFyf']")).sendKeys(ulke+" capital"+ Keys.ENTER);
-            WebElement baskent1 = Driver.getDriver().findElement(By.xpath("//input[@class='gLFyf']"));
-            baskent1.sendKeys(ulke + " capital" + Keys.ENTER);
+            WebElement baskent1 = Driver.getDriver().findElement(By.id("APjFqb"));
+            baskent1.sendKeys(ulke + " capital " + Keys.ENTER);
             if (ulke.equals("Bolivia")) {
                 String actualBaskent = Driver.getDriver().findElement(By.xpath("//div[.='La Paz']")).getText();
                 String expectedBaskent = baskent;
@@ -49,17 +49,18 @@ public class DeneTest {
                 Assert.assertEquals(actualBaskent, expectedBaskent);
 
                 Driver.closeDriver();
+
+            }else {
+                Thread.sleep(1000);
+                String actualBaskent = Driver.getDriver().findElement(By.xpath("//a[@class='FLP8od']")).getText();
+                String expectedBaskent = baskent;
+                System.out.println(actualBaskent);
+                System.out.println(baskent);
+                Assert.assertEquals(actualBaskent, expectedBaskent);
+
+
+                Driver.closeDriver();
+
             }
-            Thread.sleep(1000);
-            String actualBaskent = Driver.getDriver().findElement(By.xpath("//a[@class='FLP8od']")).getText();
-            String expectedBaskent = baskent;
-            System.out.println(actualBaskent);
-            System.out.println(baskent);
-            Assert.assertEquals(actualBaskent, expectedBaskent);
-
-
-        Driver.closeDriver();
-
-
         }
     }
